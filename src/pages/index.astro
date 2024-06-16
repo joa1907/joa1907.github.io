@@ -1,63 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import LinkedInIcon from "../icons/LinkedIn.astro";
-import GitHubIcon from "../icons/GitHub.astro";
-import SocialPill from "../icons/SocialPill.astro";
-import MailIcon from "../icons/Mail.astro";
+import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
-import CvIcon from "../icons/Cv.astro";
+import BriefcaseIcon from "../icons/Briefcase.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout
   title="Portfolio de Joaquin Cardoso - Desarrollador Web"
   description="Portfolio de Joaquin Cardoso desarrollador web fullstack, con título de analista de sistemas"
 >
-  <main>
+  <main class="px-4">
     <section class="w-full mx-auto lg:w-[600px] pt-32 pb-28">
-      <h1
-        class="text-white text-5xl font-bold flex flex-row gap-x-4 h-[64px] mb-2"
-      >
-        Joaquín
-        <div class="flex justify-center items-center">
-          <Badge>Disponible para trabajar</Badge>
-        </div>
-      </h1>
-      <h2 class="text-xl opacity-80 text-wrap">
-        Analista de Sistemas y Desarrollador Web FullStack.
-        <br />
-        Tengo 26 años, soy de Buenos Aires, Argentina.
-      </h2>
-      <div class="flex gap-3 mt-5 flex-wrap">
-        <SocialPill
-          href="https://www.linkedin.com/in/joaquin-cardoso-9a0ab1286/"
-        >
-          <LinkedInIcon class="size-5" />
-          LinkedIn
-        </SocialPill>
-
-        <SocialPill href="https://github.com/joa1907">
-          <GitHubIcon class="size-6" />
-          GitHub
-        </SocialPill>
-
-        <SocialPill href="">
-          <MailIcon class="size-6" />
-          joaquincardoso2219@gmail.com
-        </SocialPill>
-
-        <SocialPill href="">
-          <CvIcon class="size-6" />
-          Descargar CV
-        </SocialPill>
-      </div>
+      <Hero />
     </section>
 
-    <section class="w-full mx-auto lg:w-[600px] pb-28">
-      <h2 class="text-2xl font-semibold mb-5">Experiencia laboral</h2>
+    <section id="experience" class="w-full mx-auto lg:w-[600px] pb-28">
+      <h2 class="text-2xl font-semibold mb-5 flex gap-2 items-center">
+        <BriefcaseIcon class="size-6" />
+        Experiencia laboral
+      </h2>
       <Experience />
     </section>
+
+
   </main>
+  <Footer />
 </Layout>
 
 <style></style>
