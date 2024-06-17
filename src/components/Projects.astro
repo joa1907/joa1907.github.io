@@ -1,0 +1,60 @@
+---
+const PROJECTS = [
+  {
+    title: "Sudamericana Rugs",
+    description:
+      "Página web estática para un emprendimiento. Se integró un formulario de contacto para gestionar consultas de clientes, mejorando la comunicación y las oportunidades de negocio.",
+    img: "/proyects/sud.webp",
+    tags: ["Vue.js", "CSS", "JavaScript"],
+    link: "https://www.sudamericanarugs.com/",
+  },
+  {
+    title: "Sistema de gestión",
+    description:
+      "Aplicación web para la gestión de pedidos, clientes, tipos de productos y envíos para una empresa. Implementación y despliegue de la aplicación en un VPS.",
+    img: "/proyects/pl.webp",
+    tags: [
+      "Vue.js",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "VPS",
+    ],
+  },
+  {
+    title: "C.V Web",
+    description:
+      "Página web estática de mi cv imprimible. Hecha con Astro Build, contiene paleta de comandos para funcionalidades",
+    img: "/proyects/cv.webp",
+    tags: ["Astro", "CSS", "JavaScript"],
+    link: "https://joaquin-cardoso-minimalist-portfolio.onrender.com/",
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, img, tags, link }) => (
+    <article class="mb-10">
+      <h3 class="text-2xl font-semibold text-purple-500/90 dark:text-purple-300/80 mb-2">
+        {title}
+      </h3>
+      <p class="text-md mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row flex-wrap mb-4">
+        {tags.map((tag) => (
+          <li class="flex gap-x-2 rounded-full text-[13px] dark:text-white/90 border dark:border-white/40 py-1 px-4">
+            {tag}
+          </li>
+        ))}
+      </ul>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <img
+          class="rounded shadow-2xl shadow-white/10"
+          src={img}
+          alt={`Captura de pantalla del proyecto     ${title}`}
+        />
+      </a>
+    </article>
+  ))
+}

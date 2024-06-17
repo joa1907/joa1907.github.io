@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
-import Footer from "../components/Footer.astro";
+import CodeIcon from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
@@ -11,11 +12,11 @@ import Footer from "../components/Footer.astro";
   description="Portfolio de Joaquin Cardoso desarrollador web fullstack, con título de analista de sistemas"
 >
   <main class="px-4">
-    <section class="w-full mx-auto lg:w-[600px] pt-32 pb-28">
+    <section class="w-full mx-auto lg:w-[600px] lg:pt-32 lg:pb-28 py-10">
       <Hero />
     </section>
 
-    <section id="experience" class="w-full mx-auto lg:w-[600px] pb-28">
+    <section id="experience" class="w-full mx-auto lg:w-[600px] py-11">
       <h2 class="text-2xl font-semibold mb-5 flex gap-2 items-center">
         <BriefcaseIcon class="size-6" />
         Experiencia laboral
@@ -23,9 +24,14 @@ import Footer from "../components/Footer.astro";
       <Experience />
     </section>
 
-
+    <section id="projects" class="w-full mx-auto lg:w-[600px] pt-11 pb-3 lg:py-11">
+      <h2 class="text-2xl font-semibold mb-5 flex gap-2 items-center">
+        <CodeIcon class="size-6" />
+        Proyectos
+      </h2>
+      <Projects />
+    </section>
   </main>
-  <Footer />
 </Layout>
 
 <style></style>
