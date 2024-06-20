@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -22,6 +23,9 @@ const { description, title } = Astro.props;
   </head>
   <body class="bg-indigo-50 dark:bg-slate-900">
     <Header />
+    <!-- <header>
+      <Sidebar />
+    </header> -->
     <slot />
     <Footer />
   </body>
@@ -39,20 +43,12 @@ const { description, title } = Astro.props;
     height: 100vh;
     display: flex;
     flex-direction: column;
-       background: #fcfcfc;
-    background: -webkit-linear-gradient(
-      to right,
-      #fff,
-      #fdfdfd
-    ); 
-    background: linear-gradient(
-      to right,
-      #fff,
-      #fdfdfd
-    ); 
+    background: #fcfcfc;
+    background: -webkit-linear-gradient(to right, #fff, #fdfdfd);
+    background: linear-gradient(to right, #fff, #fdfdfd);
   }
 
-   @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     body {
       background: #000000;
       background: -webkit-linear-gradient(to right, #131313, #050505);

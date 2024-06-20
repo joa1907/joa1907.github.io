@@ -5,25 +5,30 @@ const EXPERIENCE = [
   {
     date: "Marzo 2024",
     title: "FullStack Developer",
+    subtitle: "StartUp",
     description:
-      "Desarrollo de una aplicación web para la gestión de pedidos, clientes, tipos de productos y envíos para una empresa. Utilización de tecnologías: Vue.js, JavaScript, Node.js, Express y MongoDB. Implementación y despliegue de la aplicación en un VPS. Actualmente se realiza mantenimiento.",
+      "Fui parte del desarrollo de una aplicación web para la gestión de pedidos, clientes, tipos de productos y envíos para una empresa. Tecnologías utilizadas: Vue.js, JavaScript, Node.js, Express y MongoDB. Implementación y despliegue de la aplicación en un VPS. Actualmente se realiza mantenimiento.",
   },
   {
     date: "Enero 2024",
     title: "FrontEnd Developer",
+    subtitle: "StartUp",
     description:
       "Desarrollo de una página web estática para un emprendimiento utilizando Vue.js, JavaScript, HTML y CSS. Se integró un formulario de contacto para gestionar consultas de clientes, mejorando la comunicación y las oportunidades de negocio.",
   },
   {
-    date: "2019 - 2022",
-    title: "Freelance",
+    date: "2019 - 2023",
+    title: "Servicio Técnico de PC",
+    subtitle: "Freelance",
     description:
       "Servicios de diagnóstico, mantenimiento, actualización de hardware y software para sistemas informáticos. Instalación y configuración de hardware y software según las necesidades del cliente.",
   },
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-2.5">
+<ol
+  class="relative border-s border-gray-200 dark:border-gray-700 ml-2.5 max-w-[620px]"
+>
   {
     EXPERIENCE.map((experience) => (
       <li class="mb-10 ms-4">

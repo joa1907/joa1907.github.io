@@ -1,0 +1,86 @@
+---
+import Html from "../icons/Html.astro";
+import Css from "../icons/Css.astro";
+import Js from "../icons/Js.astro";
+import Vue from "../icons/Vue.astro";
+import Php from "../icons/Php.astro";
+import Mysql from "../icons/Mysql.astro";
+import NodeIcon from "../icons/NodeIcon.astro";
+import Mongo from "../icons/Mongo.astro";
+import Git from "../icons/Git.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+
+const SKILLS = [
+  {
+    name: "HTML",
+    skillicon: Html,
+    class: "hover:bg-[#e34c26] hover:text-[#ebebeb]",
+  },
+  {
+    name: "CSS",
+    skillicon: Css,
+    class: "hover:bg-[#264de4] hover:text-[#ebebeb]",
+  },
+  {
+    name: "JavaScript",
+    skillicon: Js,
+    class: "hover:bg-[#f0db4f] hover:text-[#323330]",
+  },
+  {
+    name: "Vue.js",
+    skillicon: Vue,
+    class: "hover:bg-[#35495e] hover:text-[#42b883]",
+  },
+  {
+    name: "Php",
+    skillicon: Php,
+    class: "hover:bg-[#8993be] hover:text-[#232531]",
+  },
+  {
+    name: "MySQL",
+    skillicon: Mysql,
+    class: "hover:bg-[#02758F] hover:text-[#F29111]",
+  },
+  {
+    name: "Node.js",
+    skillicon: NodeIcon,
+    class: "hover:bg-[#303030] hover:text-[#68a063]",
+  },
+  {
+    name: "MongoDB",
+    skillicon: Mongo,
+    class: "hover:bg-[#02758F] hover:text-[#fff]",
+  },
+  {
+    name: "Git",
+    skillicon: Git,
+    class: "hover:bg-[#f34f29] hover:text-[#fff]",
+  },
+  {
+    name: "Astro",
+    skillicon: AstroIcon,
+    class: "hover:bg-[#FF5E00] hover:text-[#232531]",
+  },
+];
+---
+
+<div class="container">
+  <div class="container-skills">
+    <ul class="flex gap-y-2 gap-x-3 md:gap-2 flex-row flex-wrap mb-4">
+      {
+        SKILLS.map((skill) => {
+          return (
+            <li class={`flex `}>
+              <span
+                class={`flex font-semibold gap-x-2 cursor-default select-none items-center rounded-full border border-black/80 dark:text-white/90 dark:border-[2px] dark:border-white/20 dark:hover:border-black/80 py-1 px-4 ${skill.class}`}
+              >
+                <skill.skillicon class={`size-7 stroke-[1.5]`} />
+                {skill.name}
+              </span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
