@@ -2,10 +2,10 @@
 import MenuIcon from "../icons/Menu.astro";
 ---
 
-<div class="p-4 flex gap-8 items-center">
+<div class="p-4 flex gap-4 items-center">
   <button
     id="drawer-button"
-    class="text-white bg-zinc-950 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-black/40"
+    class="dark:text-white/80 text-black/80 font-medium rounded-lg text-sm p-2"
     type="button"
   >
     <MenuIcon />
@@ -19,17 +19,17 @@ import MenuIcon from "../icons/Menu.astro";
   tabindex="-1"
   aria-labelledby="drawer-navigation-label"
 >
-  <div class="flex justify-between p-3">
+  <div class="flex justify-between">
     <h5
       id="drawer-navigation-label"
-      class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+      class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400  p-3"
     >
       Menu
     </h5>
     <button
       id="drawer-close"
       type="button"
-      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm items-center dark:hover:bg-gray-600 dark:hover:text-white"
+      class="text-gray-400 bg-transparent  p-3 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm items-center dark:hover:bg-gray-700/30 dark:hover:text-white"
     >
       <svg
         aria-hidden="true"
@@ -52,7 +52,7 @@ import MenuIcon from "../icons/Menu.astro";
       <li class="flex justify-center flex-1 py-3">
         <a
           href="/#"
-          class="drawer-link flex w-[70%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="drawer-link flex w-[50%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/30 group"
         >
           <span class="">Inicio</span>
         </a>
@@ -60,7 +60,7 @@ import MenuIcon from "../icons/Menu.astro";
       <li class="flex justify-center flex-1 py-3">
         <a
           href="/#experience"
-          class="drawer-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="drawer-link flex w-[50%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/30 group"
         >
           <span class="">Experiencia</span>
         </a>
@@ -68,7 +68,7 @@ import MenuIcon from "../icons/Menu.astro";
       <li class="flex justify-center flex-1 py-3">
         <a
           href="/#skills"
-          class="drawer-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="drawer-link flex w-[50%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/30 group"
         >
           <span class="">Skills</span>
         </a>
@@ -76,7 +76,7 @@ import MenuIcon from "../icons/Menu.astro";
       <li class="flex justify-center flex-1 py-3">
         <a
           href="/#projects"
-          class="drawer-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="drawer-link flex w-[50%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/30 group"
         >
           <span class="">Proyectos</span>
         </a>
@@ -84,7 +84,7 @@ import MenuIcon from "../icons/Menu.astro";
       <li class="flex justify-center flex-1 py-3">
         <a
           href="mailto:joaquincardoso2219@gmail.com"
-          class="drawer-link flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+          class="drawer-link flex w-[50%] justify-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700/30 group"
         >
           <span class="">Contacto</span>
         </a>
