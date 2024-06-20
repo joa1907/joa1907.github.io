@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Sidebar from "../components/Sidebar.astro";
 
 interface Props {
   title: string;
@@ -23,9 +22,6 @@ const { description, title } = Astro.props;
   </head>
   <body class="bg-indigo-50 dark:bg-slate-900">
     <Header />
-    <!-- <header>
-      <Sidebar />
-    </header> -->
     <slot />
     <Footer />
   </body>
@@ -53,6 +49,12 @@ const { description, title } = Astro.props;
       background: #000000;
       background: -webkit-linear-gradient(to right, #131313, #050505);
       background: linear-gradient(to right, #131313, #050505);
+    }
+  }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-behavior: auto;
     }
   }
 </style>
