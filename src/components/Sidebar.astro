@@ -5,7 +5,7 @@ import MenuIcon from "../icons/Menu.astro";
 <div class="p-4 flex gap-4 items-center">
   <button
     id="drawer-button"
-    class="dark:text-white/80 text-black/80 font-medium rounded-lg text-sm p-2"
+    class="dark:text-white/80 text-black/80 font-medium rounded-lg text-sm"
     type="button"
   >
     <MenuIcon />
@@ -22,14 +22,14 @@ import MenuIcon from "../icons/Menu.astro";
   <div class="flex justify-between">
     <h5
       id="drawer-navigation-label"
-      class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400  p-3"
+      class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400 p-3"
     >
       Menu
     </h5>
     <button
       id="drawer-close"
       type="button"
-      class="text-gray-400 bg-transparent  p-3 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm items-center dark:hover:bg-gray-700/30 dark:hover:text-white"
+      class="text-gray-400 bg-transparent p-3 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm items-center dark:hover:bg-gray-700/30 dark:hover:text-white"
     >
       <svg
         aria-hidden="true"
@@ -98,19 +98,27 @@ import MenuIcon from "../icons/Menu.astro";
       const drawerNavigation = document.getElementById("drawer-navigation");
       const drawerClose = document.getElementById("drawer-close");
       const drawerLinks = document.querySelectorAll(".drawer-link");
+      const body = document.body;
 
       if (drawerButton && drawerNavigation && drawerClose) {
         drawerButton.addEventListener("click", () => {
           drawerNavigation.classList.toggle("-translate-x-full");
+          if (!drawerNavigation.classList.contains("-translate-x-full")) {
+            body.style.overflow = "hidden";
+          } else {
+            body.style.overflow = "";
+          }
         });
 
         drawerClose.addEventListener("click", () => {
           drawerNavigation.classList.add("-translate-x-full");
+          body.style.overflow = "";
         });
 
         drawerLinks.forEach((link) => {
           link.addEventListener("click", () => {
             drawerNavigation.classList.add("-translate-x-full");
+            body.style.overflow = "";
           });
         });
       }

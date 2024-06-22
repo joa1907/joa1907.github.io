@@ -7,13 +7,13 @@ import MailIcon from "../icons/Mail.astro";
 import CvIcon from "../icons/Cv.astro";
 ---
 
-<div class="flex flex-col gap-8 md:gap-0 md:flex-row items-center">
+<div class="flex flex-col-reverse gap-8 md:gap-0 md:flex-row items-center">
   <div class="flex flex-col md:flex-1">
     <h1
-      class="text-4xl lg:text-5xl font-bold flex flex-row flex-wrap gap-x-4 h-[64px] lg:mb-2"
+      class="text-4xl lg:text-5xl font-bold flex flex-row flex-wrap gap-x-4 h-[64px]"
     >
       Joaquín
-      <div class="flex justify-center items-center">
+      <div class="flex md:items-center items-start md:p-0 py-4">
         <Badge>Disponible para trabajar</Badge>
       </div>
     </h1>
@@ -22,10 +22,10 @@ import CvIcon from "../icons/Cv.astro";
       <br />
       26 años, de Buenos Aires, Argentina.
     </h2>
-    <p class="text-md opacity-70 text-wrap max-w-[700px]">joaquincardoso2219@gmail.com</p>
+    <p class="text-md opacity-70 text-wrap max-w-[700px]">
+      joaquincardoso2219@gmail.com
+    </p>
     <div class="flex gap-3 mt-5 flex-wrap max-w-[500px]">
-
-
       <SocialPill href="https://www.linkedin.com/in/joaquin-cardoso-9a0ab1286/">
         <LinkedInIcon class="size-5" />
         LinkedIn
@@ -45,14 +45,13 @@ import CvIcon from "../icons/Cv.astro";
         <CvIcon class="size-6" />
         Descargar CV
       </SocialPill>
-
     </div>
   </div>
   <div class="flex justify-center w-[100%] md:w-auto">
     <img
       src="https://avatars.githubusercontent.com/u/90669163?v=4"
       alt="joaquin photo"
-      class="rounded size-52"
+      class="rounded-full md:rounded size-32 md:size-52"
     />
   </div>
 </div>
