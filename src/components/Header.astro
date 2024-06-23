@@ -3,27 +3,48 @@ import Sidebar from "./Sidebar.astro";
 ---
 
 <header
-  class="w-full sm:w-[600px] md:w-[700px] lg:w-[900px] xl:w-[1050px] mx-auto"
+  class="fixed top-0 left-0 right-0 w-full mx-auto backdrop-blur-lg  transition-all duration-300 z-50"
 >
-  <!-- Encabezado para pantallas más grandes -->
   <div
-    class="gap-2 justify-center md:justify-between items-center flex-wrap py-5 hidden md:flex"
+    class="w-full sm:w-[600px] md:w-[700px] lg:w-[900px] xl:w-[1050px] mx-auto"
   >
+    <!-- Encabezado para pantallas más grandes -->
     <div
-      class="relative inline-flex items-center justify-center size-10 overflow-hidden bg-gray-100/90 rounded-full dark:bg-gray-600/50"
+      class="gap-2 justify-center md:justify-between items-center flex-wrap py-5 hidden md:flex"
     >
-      <span class="font-medium text-gray-600 dark:text-gray-300">JC</span>
+      <div
+        class="relative inline-flex items-center justify-center size-10 overflow-hidden bg-gray-100/90 rounded-full dark:bg-gray-600/50"
+      >
+        <span class="font-medium text-gray-600 dark:text-gray-300">JC</span>
+      </div>
+      <nav class="flex flex-row flex-wrap justify-center gap-x-10 opacity-80">
+        <a href="/#top">Inicio</a>
+        <a href="/#experience">Experiencia</a>
+        <a href="/#projects">Proyectos</a>
+        <a href="mailto:joaquincardoso2219@gmail.com">Contacto</a>
+      </nav>
     </div>
-    <nav class="flex flex-row flex-wrap justify-center gap-x-10 opacity-80">
-      <a href="/#top">Inicio</a>
-      <a href="/#experience">Experiencia</a>
-      <a href="/#projects">Proyectos</a>
-      <a href="mailto:joaquincardoso2219@gmail.com">Contacto</a>
-    </nav>
-  </div>
 
-  <!-- Encabezado para pantallas más pequeñas -->
-  <div class="md:hidden">
-    <Sidebar />
+    <!-- Encabezado para pantallas más pequeñas -->
+    <div class="md:hidden">
+      <Sidebar />
+    </div>
   </div>
 </header>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header"); // Asegúrate de que tu header tiene una etiqueta 'header'
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Scroll hacia abajo - oculta el header
+      header.style.top = "-100px"; // Ajusta el valor según el tamaño de tu header
+    } else {
+      // Scroll hacia arriba - muestra el header
+      header.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
