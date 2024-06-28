@@ -5,14 +5,14 @@ const EXPERIENCE = [
   {
     date: "Marzo 2024",
     title: "FullStack Developer",
-    subtitle: "StartUp",
+    subtitle: "Equipo de desarrollo",
     description:
       "Fui parte del desarrollo de una aplicación web para la gestión de pedidos, clientes, tipos de productos y envíos para una empresa. Tecnologías utilizadas: Vue.js, JavaScript, Node.js, Express y MongoDB. Implementación y despliegue de la aplicación en un VPS. Actualmente se realiza mantenimiento.",
   },
   {
     date: "Enero 2024",
     title: "FrontEnd Developer",
-    subtitle: "StartUp",
+    subtitle: "Equipo de desarrollo",
     description:
       "Desarrollo de una página web estática para un emprendimiento utilizando Vue.js, JavaScript, HTML y CSS. Se integró un formulario de contacto para gestionar consultas de clientes, mejorando la comunicación y las oportunidades de negocio.",
   },
@@ -27,11 +27,11 @@ const EXPERIENCE = [
 ---
 
 <ol
-  class="relative border-s border-gray-200 dark:border-gray-700 ml-2.5 max-w-[620px]"
+  class="relative border-s border-gray-200 dark:border-gray-700 ml-2.5"
 >
   {
     EXPERIENCE.map((experience) => (
-      <li class="mb-10 ms-4">
+      <li class="mt-10 ms-4">
         <ExperienceItem {...experience} />
       </li>
     ))
