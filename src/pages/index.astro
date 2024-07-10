@@ -7,6 +7,8 @@ import CodeIcon from "../icons/Code.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import SkillIcon from "../icons/Skill.astro";
+import Contact from "../components/Contact.astro";
+import MailIcon from "../icons/Mail.astro";
 ---
 
 <Layout
@@ -34,17 +36,22 @@ import SkillIcon from "../icons/Skill.astro";
       <Skills />
     </section>
 
-    <section
-      id="projects"
-      class="w-full mx-auto lg:w-[850px] pt-16 md:py-20"
-    >
+    <section id="projects" class="w-full mx-auto lg:w-[850px] pt-16 md:py-20">
       <h2 class="text-2xl font-semibold mb-5 flex gap-2 items-center">
         <CodeIcon class="size-6" />
         Proyectos
       </h2>
       <Projects />
     </section>
-  </main>
-</Layout>
 
-<style></style>
+    <section id="contact" class="w-full mx-auto lg:w-[850px] pt-16 md:pt-20">
+      <h2 class="text-2xl font-semibold mb-5 flex gap-2 items-center">
+        <MailIcon class="size-6 mt-[3px]" />
+        Contact
+      </h2>
+      <Contact />
+    </section>
+  </main>
+
+  <style></style>
+</Layout>
