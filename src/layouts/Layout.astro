@@ -20,7 +20,7 @@ const { description, title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-indigo-50 dark:bg-slate-900">
+  <body>
     <Header />
     <slot />
     <Footer />
@@ -42,14 +42,15 @@ const { description, title } = Astro.props;
     background: #fcfcfc;
     background: -webkit-linear-gradient(to right, #fff, #fdfdfd);
     background: linear-gradient(to right, #fff, #fdfdfd);
+    @apply  text-black; /* Modo claro por defecto */
   }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background: #000000;
-      background: -webkit-linear-gradient(to right, #131313, #050505);
-      background: linear-gradient(to right, #131313, #050505);
-    }
+  /* Para el modo oscuro usando la clase dark de Tailwind */
+  .dark body {
+    background: #000000;
+    background: -webkit-linear-gradient(to right, #131313, #050505);
+    background: linear-gradient(to right, #131313, #050505);
+    @apply  text-white; /* Modo oscuro cuando se agrega la clase dark */
   }
 
   @media (max-width: 768px) {
