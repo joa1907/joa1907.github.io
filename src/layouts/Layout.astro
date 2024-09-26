@@ -40,16 +40,16 @@ const { description, title } = Astro.props;
     display: flex;
     flex-direction: column;
     background: #fcfcfc;
-    background: -webkit-linear-gradient(to right, #f5f5f5, #e6e6e6);
-    background: linear-gradient(to right, #f5f5f5, #e6e6e6);
+    background: -webkit-linear-gradient(to right, #fafafa, #fbf4ff);
+    background: linear-gradient(to right, #fafafa, #fbf4ff);
     @apply  text-black; /* Modo claro por defecto */
   }
 
   /* Para el modo oscuro usando la clase dark de Tailwind */
   .dark body {
     background: #000000;
-    background: -webkit-linear-gradient(to right, #131313, #050505);
-    background: linear-gradient(to right, #131313, #050505);
+    background: -webkit-linear-gradient(to right, #050405, #030007);
+    background: linear-gradient(to right, #050405, #030007);
     @apply  text-white; /* Modo oscuro cuando se agrega la clase dark */
   }
 
