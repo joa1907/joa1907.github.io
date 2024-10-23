@@ -70,9 +70,11 @@ const SKILLS = [
       {
         SKILLS.map((skill) => {
           return (
-            <li class={`flex `}>
+            <li class={`flex`}>
               <span
-                class={`flex font-semibold gap-x-2 cursor-default select-none items-center rounded-full border border-black/80 hover:border-black/0 dark:text-white/90 dark:border-[2px] dark:border-white/20 dark:hover:border-black/0 py-1 px-4 ${skill.class}`}
+                class={`flex font-semibold gap-x-2 cursor-default select-none items-center rounded-full border border-dark-color text-dark-color 
+                hover:border-black/0 dark:text-white/90 dark:border-[2px] dark:border-white/20 dark:hover:border-black/0 
+                py-1 px-4 transition-colors duration-[250ms] ${skill.class}`}
               >
                 <skill.skillicon class={`size-7 stroke-[1.5]`} />
                 {skill.name}

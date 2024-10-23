@@ -30,11 +30,15 @@ const { description, title } = Astro.props;
 <style is:global>
   :root {
     color-scheme: light dark;
-    --primary-color: #754571;
-    --secundary-color: #2e347f;
-    --terciary-color: #716d95;
-    --light-color: #efe7fb;
-    --white-color: #fbfafb;
+    --purple-dark: #774473;
+    --blue-dark: #2d3284;
+    --dark-color: #3a425c;
+    --blue-muted: #455078;
+    --blue-gray: #6b74a3;
+    --lavender-light: #ece3f8;
+    --gray-muted: #ddd1dd;
+    --pink-light: #f3e7eb;
+    --gray-light: #f6f4f7;
   }
 
   html {
@@ -60,6 +64,54 @@ const { description, title } = Astro.props;
     @apply text-white; /* Modo oscuro cuando se agrega la clase dark */
   }
 
+  h1 {
+    color: var(--blue-muted);
+  }
+
+  h2 {
+    color: var(--blue-muted);
+  }
+
+  h3 {
+    color: var(--purple-dark);
+  }
+
+  h4,
+  p {
+    color: var(--dark-color);
+  }
+
+  .dark {
+    h1,
+    a {
+      color: var(--gray-light);
+    }
+    h2 {
+      color: var(--pink-light);
+    }
+    h3 {
+      color: var(--lavender-light);
+    }
+    h4,
+    p {
+      color: var(--gray-muted);
+    }
+  }
+
+  a {
+    color: var(--dark-color);
+    font-weight: 500;
+    &:hover {
+      color: var(--purple-dark);
+    }
+  }
+
+  .dark a {
+    color: var(--lavender-light);
+  }
+  .dark a:hover {
+    color: var(--gray-light);
+  }
   @media (max-width: 768px) {
     html {
       scroll-behavior: auto;

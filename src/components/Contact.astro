@@ -8,20 +8,19 @@ import MailIcon from "../icons/Mail.astro";
       <input
         id="contact-input"
         type="text"
-        class="col-span-6 border border-gray-300 text-gray-500 text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:text-gray-400 bg-inherit"
+        class="col-span-6 border border-blue-muted text-dark-blue text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:text-gray-400 bg-inherit"
         value="joaquincardoso1922@gmail.com"
         disabled
         readonly
       />
       <button
         id="copy-btn"
-        class="absolute end-2 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 inline-flex items-center justify-center"
+        class="absolute end-2 top-1/2 -translate-y-1/2 text-blue-muted dark:text-lavender-light hover:bg-gray-light dark:hover:bg-blue-dark rounded-lg p-2 inline-flex items-center justify-center"
       >
         <span id="default-icon">
           <svg
             class="w-3.5 h-3.5"
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 18 20"
           >
@@ -32,9 +31,8 @@ import MailIcon from "../icons/Mail.astro";
         </span>
         <span id="success-icon" class="hidden items-center">
           <svg
-            class="w-3.5 h-3.5 text-blue-700 dark:text-blue-500"
+            class="w-3.5 h-3.5 text-blue-dark dark:text-lavender-light"
             aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 16 12"
           >
@@ -50,8 +48,8 @@ import MailIcon from "../icons/Mail.astro";
         <!-- Tooltip que aparece al hacer hover -->
         <span
           id="tooltip-text"
-          class="absolute -top-9 left-1/2 -translate-x-1/2 text-xs font-medium px-2 py-1 dark:bg-gray-700 dark:text-white rounded-lg opacity-0 transition-opacity duration-200 copy-tooltip
-          bg-gray-200"
+          class="absolute -top-9 left-1/2 -translate-x-1/2 text-xs font-medium px-2 py-1 dark:bg-blue-dark dark:text-gray-light rounded-lg opacity-0 transition-opacity duration-200 copy-tooltip
+          bg-blue-muted text-gray-light"
         >
           Copiar
         </span>
@@ -60,7 +58,7 @@ import MailIcon from "../icons/Mail.astro";
   </div>
   <a
     href="mailto:joaquincardoso1922@gmail.com"
-    class="py-2 px-5 ml-2 focus:outline-none rounded-lg border border-gray-200 hover:bg-gray-900/90 hover:text-white focus:z-10 focus:ring-4 text-gray-500 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+    class="py-2 px-5 ml-2 focus:outline-none rounded-lg border border-blue-muted bg-gray-light hover:bg-blue-muted hover:text-gray-light focus:z-10 text-blue-muted dark:bg-inherit dark:focus:ring-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
     ><MailIcon class="size-6" /></a
   >
 </div>
