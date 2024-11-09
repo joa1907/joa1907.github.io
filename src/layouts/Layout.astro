@@ -22,6 +22,8 @@ const { description, title } = Astro.props;
   </head>
   <body>
     <Header />
+      <div class="dark:hidden fixed inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
+      <div class="fixed hidden dark:block inset-0 -z-10 h-full w-full bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"></div></div>
     <slot />
     <Footer />
   </body>
@@ -47,13 +49,16 @@ const { description, title } = Astro.props;
   }
 
   body {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: #fcfcfc;
-    background: -webkit-linear-gradient(to right, #fafafa, #fbf4ff);
-    background: linear-gradient(to right, #fafafa, #fbf4ff);
-    @apply text-black; /* Modo claro por defecto */
+    background: -webkit-linear-gradient(135deg, #f6f4f7, #e7ebff);
+    background: linear-gradient(135deg, #fafafa 33%, #fafaff 66%, #f8f9ff 100%);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: top;
+    @apply text-black;
   }
 
   /* Para el modo oscuro usando la clase dark de Tailwind */
@@ -61,7 +66,7 @@ const { description, title } = Astro.props;
     background: #000000;
     background: -webkit-linear-gradient(to right, #050405, #030007);
     background: linear-gradient(to right, #050405, #030007);
-    @apply text-white; /* Modo oscuro cuando se agrega la clase dark */
+    @apply text-white;
   }
 
   h1 {

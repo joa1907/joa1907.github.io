@@ -7,14 +7,16 @@ import MailIcon from "../icons/Mail.astro";
     <div class="relative">
       <input
         id="contact-input"
+        aria-label="Email"
         type="text"
-        class="col-span-6 border border-blue-muted text-dark-blue text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:text-gray-400 bg-inherit"
+        class="col-span-6 border border-blue-muted text-dark-blue text-sm rounded-lg block w-full p-2.5 dark:border-gray-600 dark:text-lavender-light/90 bg-inherit dark:border-[2px] dark:border-white/20"
         value="joaquincardoso1922@gmail.com"
         disabled
         readonly
       />
       <button
         id="copy-btn"
+        aria-label="Copiar email"
         class="absolute end-2 top-1/2 -translate-y-1/2 text-blue-muted dark:text-lavender-light hover:bg-gray-light dark:hover:bg-blue-dark rounded-lg p-2 inline-flex items-center justify-center"
       >
         <span id="default-icon">
@@ -48,7 +50,7 @@ import MailIcon from "../icons/Mail.astro";
         <!-- Tooltip que aparece al hacer hover -->
         <span
           id="tooltip-text"
-          class="absolute -top-9 left-1/2 -translate-x-1/2 text-xs font-medium px-2 py-1 dark:bg-blue-dark dark:text-gray-light rounded-lg opacity-0 transition-opacity duration-200 copy-tooltip
+          class="absolute -top-9 left-1/2 -translate-x-1/2 text-xs font-medium px-2 py-1 dark:bg-blue-dark dark:text-gray-light rounded-lg hidden opacity-0 copy-tooltip
           bg-blue-muted text-gray-light"
         >
           Copiar
@@ -58,7 +60,8 @@ import MailIcon from "../icons/Mail.astro";
   </div>
   <a
     href="mailto:joaquincardoso1922@gmail.com"
-    class="py-2 px-5 ml-2 focus:outline-none rounded-lg border border-blue-muted bg-gray-light hover:bg-blue-muted hover:text-gray-light focus:z-10 text-blue-muted dark:bg-inherit dark:focus:ring-gray-700 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+    aria-label="Enviar Email"
+    class="py-2 px-5 ml-2 focus:outline-none rounded-lg border border-blue-muted bg-gray-light hover:bg-blue-muted hover:text-gray-light focus:z-10 text-blue-muted dark:bg-inherit dark:border-[2px] dark:border-white/20 dark:text-lavender-light dark:hover:text-white dark:hover:border-white dark:focus:ring-blue-muted/60"
     ><MailIcon class="size-6" /></a
   >
 </div>
@@ -78,6 +81,8 @@ import MailIcon from "../icons/Mail.astro";
         // Cambiar el texto del tooltip a "¡Copiado!" y hacerlo visible
         $("tooltip-text").textContent = "¡Copiado!";
         $("tooltip-text").classList.add("opacity-100");
+        $("tooltip-text").classList.add("flex");
+        $("tooltip-text").classList.remove("hidden");
         $("tooltip-text").classList.remove("opacity-0");
 
         setTimeout(() => {
@@ -87,6 +92,8 @@ import MailIcon from "../icons/Mail.astro";
           // Restaurar el texto del tooltip a "Copiar" después de un tiempo
           $("tooltip-text").textContent = "Copiar";
           $("tooltip-text").classList.remove("opacity-100");
+          $("tooltip-text").classList.remove("flex");
+          $("tooltip-text").classList.add("hidden");
           $("tooltip-text").classList.add("opacity-0");
         }, 3000);
       })
@@ -99,10 +106,14 @@ import MailIcon from "../icons/Mail.astro";
   const copyBtn = document.getElementById("copy-btn");
   copyBtn.addEventListener("mouseenter", () => {
     document.getElementById("tooltip-text").classList.add("opacity-100");
+    document.getElementById("tooltip-text").classList.add("flex");
     document.getElementById("tooltip-text").classList.remove("opacity-0");
+    document.getElementById("tooltip-text").classList.remove("hidden");
   });
   copyBtn.addEventListener("mouseleave", () => {
     document.getElementById("tooltip-text").classList.remove("opacity-100");
+    document.getElementById("tooltip-text").classList.remove("flex");
     document.getElementById("tooltip-text").classList.add("opacity-0");
+    document.getElementById("tooltip-text").classList.add("hidden");
   });
 </script>
