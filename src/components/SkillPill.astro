@@ -1,0 +1,25 @@
+---
+import { SKILLS } from "../types/skills";
+import type { SkillName } from "../types/skills";
+
+interface Props {
+  skillName: SkillName;
+  extraClasses?: string;
+  iconSize?: string;
+}
+
+const { skillName, extraClasses, iconSize } = Astro.props as Props;
+const skill = SKILLS.find((skill) => skill.name === skillName);
+
+if (!skill) throw new Error(`Skill "${skillName}" not found`);
+const Icon = skill.icon;
+---
+
+<span
+  class={`flex sm:justify-normal justify-center gap-1 font-semibold cursor-default select-none items-center rounded-full border border-dark-color text-dark-color
+  hover:border-black/0 dark:text-white/90 dark:border-[2px] dark:border-white/20 dark:hover:border-black/0
+  py-1 px-4 w-full sm:w-auto transition-colors duration-[250ms] ${skill.class} ${extraClasses || ""}`}
+>
+  <Icon class={iconSize || `size-7 stroke-[1.5]`} />
+  {skillName}
+</span>

@@ -2,12 +2,22 @@
 import GitHub from "../icons/GitHub.astro";
 import SocialPill from "../icons/SocialPill.astro";
 import LinkButton from "./LinkButton.astro";
+import SkillPill from "./SkillPill.astro";
 
-const PROJECTS = [
+import type { SkillName } from "../types/skills";
+
+const PROJECTS: {
+  title: string;
+  description: string;
+  img: string;
+  tags: SkillName[];
+  link?: string;
+  github?: string;
+}[] = [
   {
     title: "Sudamericana Rugs",
     description:
-      "Página web estática para un emprendimiento. Se integró un formulario de contacto para gestionar consultas de clientes, mejorando la comunicación y las oportunidades de negocio.",
+      "Sitio web para un emprendimiento. Se integró un formulario de contacto para gestionar consultas de clientes, mejorando la comunicación y las oportunidades de negocio.",
     img: "/proyects/sud.webp",
     tags: ["Vue.js", "CSS", "JavaScript"],
     link: "https://www.sudamericanarugs.com/",
@@ -15,22 +25,14 @@ const PROJECTS = [
   {
     title: "Sistema de gestión",
     description:
-      "Aplicación web para la gestión de pedidos, envios, clientes y productos para una empresa. Realicé componentes para listar, modificar, crear y eliminar elementos de la base de datos. También la autentificación de los usuarios con JWT y filtrado reactivo en los componentes.",
+      "Aplicación web para la gestión de pedidos, envíos, clientes y productos de una empresa. Realicé componentes para listar, modificar, crear y eliminar elementos de la base de datos. También la autenticación de los usuarios con JWT y filtrado reactivo en los componentes.",
     img: "/proyects/pl.webp",
-    tags: [
-      "Vue.js",
-      "CSS",
-      "JavaScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "VPS",
-    ],
+    tags: ["Vue.js", "CSS", "JavaScript", "Node.js", "MongoDB"],
   },
   {
     title: "CV Web",
     description:
-      "Página web estática de mi cv imprimible. Hecha con Astro del curso de midudev. Realicé mejoras en el modo impresión pdf y correcciones en el responsive.",
+      "Página web de mi cv imprimible. Hecha con Astro basada en el curso de midudev. Realicé mejoras en el modo impresión pdf y correcciones en el responsive.",
     img: "/proyects/cv.webp",
     github: "https://github.com/joa1907/minimalist-portfolio",
     tags: ["Astro", "CSS", "JavaScript"],
@@ -60,15 +62,17 @@ const PROJECTS = [
 
         <div class="flex flex-col w-full md:w-1/2">
           <header class="flex flex-1 flex-col">
-            <h3 class="text-2xl font-semibold mb-2">
-              {title}
-            </h3>
+            <h3 class="text-2xl font-semibold mb-2">{title}</h3>
             <div class="flex flex-wrap mt-2">
               <div class="mt-2 text-dark-color dark:text-gray-400">
                 <ul class="flex gap-2 flex-row flex-wrap mb-4">
                   {tags.map((tag) => (
-                    <li class="flex rounded-full text-sm border border-blue-muted text-dark-color font-medium dark:text-white/90 dark:border-[2px] dark:border-white/20 py-1 px-4">
-                      {tag}
+                    <li>
+                      <SkillPill
+                        skillName={tag}
+                        extraClasses="px-4 py-[3px] text-sm"
+                        iconSize="size-6 stroke-[1.5]"
+                      />
                     </li>
                   ))}
                 </ul>
